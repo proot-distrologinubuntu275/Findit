@@ -16,7 +16,7 @@
 <br/><br/>
 
 **SUBMITTED BY:**  
-**Yogesh & Project Team Members**  
+**Suryakant Jaiswar**  
 Roll No / Student ID: CS2024-001  
 
 <br/>
@@ -37,7 +37,7 @@ Department of Computer Science & Engineering
 
 ## **CERTIFICATE OF APPROVAL**
 
-This is to certify that the project entitled **"CampusTrack: A Secured Centralized Lost and Found Platform for College Campuses"** submitted by **Yogesh** (Roll No: **CS2024-001**) in partial fulfillment of the requirements for the award of the Degree of **Bachelor of Technology / Bachelor of Science in Computer Science & Engineering / Information Technology** from **[University Name]**, is an authentic record of the research and development work carried out by them under my guidance and supervision.
+This is to certify that the project entitled **"CampusTrack: A Secured Centralized Lost and Found Platform for College Campuses"** submitted by **Suryakant Jaiswar** (Roll No: **CS2024-001**) in partial fulfillment of the requirements for the award of the Degree of **Bachelor of Technology / Bachelor of Science in Computer Science & Engineering / Information Technology** from **[University Name]**, is an authentic record of the research and development work carried out by them under my guidance and supervision.
 
 To the best of my knowledge, the matter embodied in this project report has not been submitted to any other University or Institute for the award of any degree or diploma.
 
@@ -613,4 +613,5 @@ Future milestones planned for CampusTrack include:
 8. **Tailwind Labs:** *"Tailwind CSS Documentation"* â€“ [https://tailwindcss.com](https://tailwindcss.com)
 
 </div>
+
 
