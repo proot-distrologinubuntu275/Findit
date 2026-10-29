@@ -1,0 +1,9 @@
+{
+  "name": "campustrack-lost-and-found",
+  "version": "1.0.0",
+  "description": "Full-stack College Lost & Found Portal",
+  "scripts": {
+    "start": "node start.js",
+    "dev": "node start.js"
+  }
+}

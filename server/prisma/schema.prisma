@@ -1,0 +1,71 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           Int            @id @default(autoincrement())
+  name         String
+  email        String         @unique
+  password     String
+  phone        String?
+  collegeId    String?
+  role         String         @default("STUDENT") // STUDENT or ADMIN
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  items        Item[]
+  claims       Claim[]
+  notifications Notification[]
+}
+
+model Item {
+  id               Int       @id @default(autoincrement())
+  title            String
+  description      String
+  category         String    // "Electronics", "ID Cards", "Keys", "Wallets & Bags", "Books & Stationery", "Clothing", "Other"
+  type             String    // "LOST" or "FOUND"
+  status           String    @default("OPEN") // "OPEN", "CLAIM_PENDING", "RESOLVED"
+  location         String    // e.g. "Library 2nd Floor", "Canteen", "Room 304", etc.
+  date             DateTime
+  imageUrl         String?
+  securityQuestion String?   // For FOUND items (anti-fraud claim verification)
+  contactEmail     String?
+  contactPhone     String?
+
+  userId           Int
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  claims           Claim[]
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
+
+model Claim {
+  id              Int       @id @default(autoincrement())
+  itemId          Int
+  item            Item      @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  claimantId      Int
+  claimant        User      @relation(fields: [claimantId], references: [id], onDelete: Cascade)
+  status          String    @default("PENDING") // "PENDING", "APPROVED", "REJECTED"
+  message         String    // Reason, description of hidden markings, or answer to security question
+  proofImageUrl   String?
+  claimantContact String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model Notification {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  message   String
+  link      String?
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
