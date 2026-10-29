@@ -1,59 +1,68 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>CampusTrack - Black Book Academic Project Report</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
-    
     @page {
       size: A4;
-      margin: 25mm 20mm 20mm 25mm;
-      @bottom-right {
-        content: counter(page);
-      }
+      margin: 14mm 16mm 14mm 16mm;
     }
     
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 12pt;
-      line-height: 1.6;
+      font-size: 10.5pt;
+      line-height: 1.45;
       color: #111827;
       background: #fff;
-      margin: 0 auto;
-      max-width: 800px;
-      padding: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .no-print {
+      display: none !important;
+    }
+
+    .page {
+      width: 100%;
+      height: 268mm;
+      max-height: 268mm;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      position: relative;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+      break-after: auto;
     }
 
     h1, h2, h3, h4 {
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       color: #0f172a;
+      margin-top: 0;
       page-break-after: avoid;
     }
 
-    h1 { font-size: 20pt; text-align: center; margin-bottom: 8px; }
-    h2 { font-size: 15pt; border-bottom: 2px solid #0f172a; padding-bottom: 4px; margin-top: 24px; }
-    h3 { font-size: 13pt; margin-top: 16px; color: #1e293b; }
+    h1 { font-size: 18pt; text-align: center; }
+    h2 { font-size: 13pt; border-bottom: 1.5px solid #0f172a; padding-bottom: 2px; margin-bottom: 8px; margin-top: 14px; }
+    h3 { font-size: 11pt; margin-top: 10px; margin-bottom: 4px; color: #1e293b; }
 
-    .page-break {
-      page-break-after: always;
-      break-after: page;
-    }
-
-    .cover-page {
-      text-align: center;
-      padding-top: 40px;
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+    p { margin: 5px 0; text-align: justify; }
+    ul, ol { margin: 4px 0 8px 18px; padding: 0; }
+    li { margin-bottom: 3px; }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 14px 0;
-      font-size: 10.5pt;
+      margin: 8px 0;
+      font-size: 9pt;
+      line-height: 1.35;
     }
 
     table, th, td {
@@ -64,224 +73,218 @@
       background-color: #f1f5f9;
       font-weight: bold;
       text-align: left;
-      padding: 6px 10px;
+      padding: 4px 8px;
     }
 
     td {
-      padding: 6px 10px;
+      padding: 4px 8px;
       vertical-align: top;
     }
 
-    .img-container {
+    .img-box {
       text-align: center;
-      margin: 16px 0;
-      page-break-inside: avoid;
+      margin: 6px 0;
     }
 
-    .img-container img {
-      max-width: 95%;
-      height: auto;
+    .img-box img {
+      max-width: 90%;
       border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      border-radius: 4px;
     }
 
     .caption {
-      font-size: 10pt;
+      font-size: 8.5pt;
       font-style: italic;
       color: #475569;
-      margin-top: 4px;
+      margin-top: 2px;
     }
 
-    pre, code {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 10pt;
-      background: #f8fafc;
-    }
-
-    pre {
-      padding: 10px;
-      border: 1px solid #e2e8f0;
-      border-radius: 4px;
-      overflow-x: auto;
-      white-space: pre-wrap;
-    }
-
-    .sign-row {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 80px;
-      padding: 0 20px;
-    }
-
-    @media print {
-      body { max-width: 100%; padding: 0; }
-      .no-print { display: none; }
+    .footer-num {
+      position: absolute;
+      bottom: 2mm;
+      right: 0;
+      font-size: 9pt;
+      font-family: Arial, sans-serif;
+      color: #64748b;
     }
   </style>
 </head>
 <body>
 
-  <!-- PRINT ACTION BAR -->
-  <div class="no-print" style="background:#4f46e5; color:#fff; padding:12px 20px; border-radius:8px; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center;">
-    <span><strong>Academic Black Book Ready (12-13 Pages):</strong> Open in browser and click Print to export to PDF.</span>
-    <button onclick="window.print()" style="background:#fff; color:#4f46e5; border:none; padding:8px 16px; font-weight:bold; border-radius:6px; cursor:pointer;">🖨️ Print / Save as PDF</button>
-  </div>
-
-  <!-- PAGE 1: TITLE / COVER -->
-  <div class="cover-page page-break">
+  <!-- ==================== PAGE 1: COVER / TITLE ==================== -->
+  <div class="page" style="text-align: center; display: flex; flex-direction: column; justify-content: space-between; padding-top: 25px; padding-bottom: 20px;">
     <div>
-      <p style="font-size:14pt; font-weight:bold; letter-spacing:1px; margin-bottom:4px;">A PROJECT REPORT</p>
-      <p style="font-size:12pt; margin-top:0;">ON</p>
-      <h1 style="font-size:22pt; margin:20px 0; color:#1e1b4b; text-transform:uppercase;">CAMPUSTRACK: A SECURED CENTRALIZED LOST AND FOUND PLATFORM FOR COLLEGE CAMPUSES</h1>
-      <p style="font-size:11.5pt; font-style:italic; max-width:600px; margin:20px auto;">Submitted in partial fulfillment of the requirements for the award of the degree of</p>
-      <p style="font-size:14pt; font-weight:bold;">BACHELOR OF TECHNOLOGY / SCIENCE</p>
-      <p style="font-size:11pt; margin-top:-5px;">IN</p>
-      <p style="font-size:13pt; font-weight:bold;">COMPUTER SCIENCE & ENGINEERING</p>
+      <p style="font-size: 13pt; font-weight: bold; letter-spacing: 1.5px; margin-bottom: 2px;">A PROJECT REPORT</p>
+      <p style="font-size: 11pt; margin-top: 0;">ON</p>
+      <h1 style="font-size: 20pt; margin: 25px 0 15px 0; color: #1e1b4b; text-transform: uppercase; line-height: 1.3;">
+        CAMPUSTRACK: A SECURED CENTRALIZED LOST AND FOUND PLATFORM FOR COLLEGE CAMPUSES
+      </h1>
+      <p style="font-size: 11pt; font-style: italic; max-width: 520px; margin: 15px auto;">
+        Submitted in partial fulfillment of the requirements for the award of the degree of
+      </p>
+      <p style="font-size: 13pt; font-weight: bold; margin-bottom: 2px;">BACHELOR OF TECHNOLOGY / SCIENCE</p>
+      <p style="font-size: 10pt; margin: 0;">IN</p>
+      <p style="font-size: 12.5pt; font-weight: bold; margin-top: 2px;">COMPUTER SCIENCE & ENGINEERING</p>
     </div>
 
-    <div style="margin: 40px 0;">
-      <p style="font-size:11pt; margin-bottom:4px;"><strong>SUBMITTED BY:</strong></p>
-      <p style="font-size:12pt; font-weight:bold;">Yogesh & Project Team</p>
-      <p style="font-size:11pt; color:#475569;">Roll No / Student ID: CS2024-001</p>
+    <div>
+      <p style="font-size: 10.5pt; margin-bottom: 2px;"><strong>SUBMITTED BY:</strong></p>
+      <p style="font-size: 12pt; font-weight: bold; margin: 0;">Yogesh & Project Team</p>
+      <p style="font-size: 10pt; color: #475569; margin: 2px 0;">Roll No / Student ID: CS2024-001</p>
       <br>
-      <p style="font-size:11pt; margin-bottom:4px;"><strong>UNDER THE GUIDANCE OF:</strong></p>
-      <p style="font-size:12pt; font-weight:bold;">Prof. [Project Guide Name]</p>
-      <p style="font-size:11pt; color:#475569;">Department of Computer Science & Engineering</p>
+      <p style="font-size: 10.5pt; margin-bottom: 2px;"><strong>UNDER THE GUIDANCE OF:</strong></p>
+      <p style="font-size: 12pt; font-weight: bold; margin: 0;">Prof. [Project Guide Name]</p>
+      <p style="font-size: 10pt; color: #475569; margin: 2px 0;">Department of Computer Science & Engineering</p>
     </div>
 
     <div>
-      <hr style="border:0; border-top:1px solid #94a3b8; width:80%; margin:20px auto;">
-      <h3 style="margin-bottom:2px; font-size:13pt;">DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING</h3>
-      <p style="font-size:12pt; font-weight:bold; margin:2px 0;">[COLLEGE / UNIVERSITY NAME]</p>
-      <p style="font-size:11pt; color:#64748b;">ACADEMIC YEAR: 2026 – 2027</p>
+      <hr style="border: 0; border-top: 1px solid #94a3b8; width: 70%; margin: 15px auto;">
+      <h3 style="margin-bottom: 2px; font-size: 11.5pt;">DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING</h3>
+      <p style="font-size: 11.5pt; font-weight: bold; margin: 2px 0;">[COLLEGE / UNIVERSITY NAME]</p>
+      <p style="font-size: 10.5pt; color: #64748b; margin: 2px 0;">ACADEMIC YEAR: 2026 – 2027</p>
     </div>
   </div>
 
-  <!-- PAGE 2: CERTIFICATE -->
-  <div class="page-break">
-    <h2 style="text-align:center;">CERTIFICATE OF APPROVAL</h2>
-    <p style="text-align:justify; margin-top:30px;">
-      This is to certify that the project entitled <strong>"CampusTrack: A Secured Centralized Lost and Found Platform for College Campuses"</strong> submitted by <strong>Yogesh</strong> (Roll No: <strong>CS2024-001</strong>) in partial fulfillment of the requirements for the award of the Degree of <strong>Bachelor of Technology / Bachelor of Science in Computer Science & Engineering</strong> from <strong>[University Name]</strong>, is an authentic record of the research and engineering work carried out by them under my guidance and supervision.
+  <!-- ==================== PAGE 2: CERTIFICATE ==================== -->
+  <div class="page" style="padding-top: 25px;">
+    <h2 style="text-align: center; margin-top: 0; font-size: 14pt;">CERTIFICATE OF APPROVAL</h2>
+    <p style="margin-top: 25px;">
+      This is to certify that the project entitled <strong>"CampusTrack: A Secured Centralized Lost and Found Platform for College Campuses"</strong> submitted by <strong>Yogesh</strong> (Roll No: <strong>CS2024-001</strong>) in partial fulfillment of the requirements for the award of the Degree of <strong>Bachelor of Technology / Bachelor of Science in Computer Science & Engineering</strong> from <strong>[University Name]</strong>, is an authentic record of the research, design, and software implementation carried out by them under my guidance and supervision.
     </p>
-    <p style="text-align:justify;">
+    <p>
       To the best of my knowledge, the matter embodied in this project report has not been submitted to any other University or Institute for the award of any degree or diploma.
     </p>
 
-    <div class="sign-row" style="margin-top:120px;">
-      <div style="text-align:center;">
+    <div style="margin-top: 140px; display: flex; justify-content: space-between; padding: 0 15px;">
+      <div style="text-align: center;">
         <p>_______________________________</p>
         <p><strong>Prof. [Project Guide Name]</strong><br>Internal Project Guide<br>Dept. of Computer Science</p>
       </div>
-      <div style="text-align:center;">
+      <div style="text-align: center;">
         <p>_______________________________</p>
         <p><strong>Prof. [HOD Name]</strong><br>Head of the Department<br>Dept. of Computer Science</p>
       </div>
     </div>
 
-    <div style="margin-top:80px; text-align:center;">
+    <div style="margin-top: 100px; text-align: center;">
       <p>_______________________________</p>
       <p><strong>External Examiner</strong><br>Date of Examination: _______________</p>
     </div>
+    <div class="footer-num">Page ii</div>
   </div>
 
-  <!-- PAGE 3: DECLARATION & ABSTRACT -->
-  <div class="page-break">
-    <h2 style="text-align:center;">DECLARATION</h2>
-    <p style="text-align:justify;">
-      We hereby declare that the project entitled <strong>"CampusTrack: A Secured Centralized Lost and Found Platform for College Campuses"</strong> is a genuine project completed by us under the supervision of our project guide. We further declare that this report represents our own work and effort, and that all citations, literature, and technical resources utilized have been duly acknowledged.
+  <!-- ==================== PAGE 3: DECLARATION & ABSTRACT ==================== -->
+  <div class="page" style="padding-top: 20px;">
+    <h2 style="text-align: center; margin-top: 0; font-size: 13pt;">DECLARATION</h2>
+    <p>
+      We hereby declare that the project report entitled <strong>"CampusTrack: A Secured Centralized Lost and Found Platform for College Campuses"</strong> submitted to the Department of Computer Science & Engineering is an original work conducted by us under the supervision of our guide. All ideas, source citations, diagrams, and literature utilized from external sources have been appropriately credited.
     </p>
-    <p style="margin-top:30px;">
+    <p style="margin-top: 20px;">
       <strong>Date:</strong> 30th October 2026<br>
       <strong>Place:</strong> [Campus City]<br>
-      <strong>Student Signature:</strong> ___________________________
+      <strong>Candidate Signature:</strong> ___________________________
     </p>
 
-    <hr style="margin:40px 0; border:0; border-top:1px solid #cbd5e1;">
+    <hr style="margin: 25px 0; border: 0; border-top: 1px solid #cbd5e1;">
 
-    <h2 style="text-align:center;">ABSTRACT</h2>
-    <p style="text-align:justify;">
-      Educational institutions operate across vast multi-building campuses with thousands of active students, faculty, and administrative personnel moving daily between classrooms, laboratories, sports facilities, and dining halls. In such high-traffic environments, belongings including scientific calculators, laptops, identity cards, room keys, and backpacks are routinely misplaced. Traditional lost-and-found mechanisms—relying on manual paper logbooks at security gates or informal WhatsApp groups—are unorganized, lack searchability, lack photographic evidence, and pose severe privacy and fraud risks.
+    <h2 style="text-align: center; font-size: 13pt;">ABSTRACT</h2>
+    <p>
+      Collegiate campuses span extensive physical facilities where thousands of students, faculty, and administrative staff move across classrooms, multi-floor libraries, laboratories, sports pavilions, and dining facilities daily. Due to this high transit density, personal assets—such as scientific calculators, laptops, university identity cards, room keys, and backpacks—are frequently misplaced.
     </p>
-    <p style="text-align:justify;">
-      <strong>CampusTrack</strong> is a centralized web-based platform developed to eliminate these problems. Architected with a modern stack—<strong>React 19</strong>, <strong>Tailwind CSS</strong>, <strong>Node.js Express 5</strong>, and an embedded <strong>SQLite</strong> database via <strong>Prisma ORM</strong>—the application facilitates seamless reporting of lost and found belongings. Crucially, the system introduces an <strong>Anti-Fraud Verification Challenge Protocol</strong> that allows finders to conceal identifying marks as security questions that only legitimate owners can answer. With local disk photo uploads via <strong>Multer</strong>, secure authentication via <strong>JWT</strong>, and an administrative security monitoring panel, CampusTrack delivers an accessible, fraud-resistant solution for academic institutions.
+    <p>
+      Conventional lost-and-found practices rely on manual security gate registers, paper corkboard flyers, or informal WhatsApp group chats. These approaches are unorganized, unsearchable, lack visual documentation, and present high vulnerability to fraudulent claims.
     </p>
+    <p>
+      <strong>CampusTrack</strong> is an automated, web-based Lost and Found ecosystem engineered to solve these challenges. Employing a modern three-tier decoupled architecture—comprising <strong>React 19</strong>, <strong>Tailwind CSS</strong>, <strong>Node.js Express 5</strong>, and an embedded <strong>SQLite</strong> database managed through <strong>Prisma ORM</strong>—the application introduces an <strong>Anti-Fraud Security Challenge Protocol</strong>. This protocol requires finders to withhold specific identifying attributes as questions that only the rightful owner can verify. Featuring local multipart image storage via <strong>Multer</strong>, secure tokenized authorization via <strong>JWT</strong>, and an administrative security console, CampusTrack offers a transparent, portable, and production-ready solution for universities.
+    </p>
+    <div class="footer-num">Page iii</div>
   </div>
 
-  <!-- PAGE 4: TABLE OF CONTENTS -->
-  <div class="page-break">
-    <h2 style="text-align:center;">TABLE OF CONTENTS</h2>
-    <table>
+  <!-- ==================== PAGE 4: TABLE OF CONTENTS ==================== -->
+  <div class="page" style="padding-top: 20px;">
+    <h2 style="text-align: center; margin-top: 0; font-size: 13pt;">TABLE OF CONTENTS</h2>
+    <table style="font-size: 9.5pt;">
       <thead>
         <tr>
-          <th style="width:15%; text-align:center;">Chapter</th>
+          <th style="width: 15%; text-align: center;">Chapter</th>
           <th>Topic</th>
-          <th style="width:15%; text-align:center;">Page No.</th>
+          <th style="width: 15%; text-align: center;">Page No.</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td style="text-align:center;">-</td><td>Certificate of Approval</td><td style="text-align:center;">ii</td></tr>
-        <tr><td style="text-align:center;">-</td><td>Declaration & Abstract</td><td style="text-align:center;">iii</td></tr>
-        <tr><td style="text-align:center;"><strong>1</strong></td><td><strong>Introduction</strong></td><td style="text-align:center;">1</td></tr>
-        <tr><td style="text-align:center;"><strong>2</strong></td><td><strong>Problem Definition</strong></td><td style="text-align:center;">2</td></tr>
-        <tr><td style="text-align:center;"><strong>3</strong></td><td><strong>Objectives</strong></td><td style="text-align:center;">3</td></tr>
-        <tr><td style="text-align:center;"><strong>4</strong></td><td><strong>Requirement Specification</strong></td><td style="text-align:center;">4</td></tr>
-        <tr><td style="text-align:center;"><strong>5</strong></td><td><strong>Existing System</strong></td><td style="text-align:center;">5</td></tr>
-        <tr><td style="text-align:center;"><strong>6</strong></td><td><strong>Proposed System</strong></td><td style="text-align:center;">6</td></tr>
-        <tr><td style="text-align:center;"><strong>7</strong></td><td><strong>System Analysis & Design</strong></td><td style="text-align:center;">7</td></tr>
-        <tr><td style="text-align:center;"><strong>8</strong></td><td><strong>Methodology</strong></td><td style="text-align:center;">9</td></tr>
-        <tr><td style="text-align:center;"><strong>9</strong></td><td><strong>System Implementation</strong></td><td style="text-align:center;">10</td></tr>
-        <tr><td style="text-align:center;"><strong>10</strong></td><td><strong>Testing & Quality Assurance</strong></td><td style="text-align:center;">11</td></tr>
-        <tr><td style="text-align:center;"><strong>11</strong></td><td><strong>Results / Screenshots</strong></td><td style="text-align:center;">12</td></tr>
-        <tr><td style="text-align:center;"><strong>12</strong></td><td><strong>Conclusion</strong></td><td style="text-align:center;">13</td></tr>
-        <tr><td style="text-align:center;"><strong>13</strong></td><td><strong>Future Scope</strong></td><td style="text-align:center;">13</td></tr>
-        <tr><td style="text-align:center;"><strong>14</strong></td><td><strong>References</strong></td><td style="text-align:center;">14</td></tr>
+        <tr><td style="text-align: center;">-</td><td>Certificate of Approval</td><td style="text-align: center;">ii</td></tr>
+        <tr><td style="text-align: center;">-</td><td>Declaration & Abstract</td><td style="text-align: center;">iii</td></tr>
+        <tr><td style="text-align: center;"><strong>1</strong></td><td><strong>Introduction</strong></td><td style="text-align: center;">1</td></tr>
+        <tr><td style="text-align: center;"><strong>2</strong></td><td><strong>Problem Definition</strong></td><td style="text-align: center;">1</td></tr>
+        <tr><td style="text-align: center;"><strong>3</strong></td><td><strong>Objectives</strong></td><td style="text-align: center;">2</td></tr>
+        <tr><td style="text-align: center;"><strong>4</strong></td><td><strong>Requirement Specification</strong></td><td style="text-align: center;">2</td></tr>
+        <tr><td style="text-align: center;"><strong>5</strong></td><td><strong>Existing System</strong></td><td style="text-align: center;">3</td></tr>
+        <tr><td style="text-align: center;"><strong>6</strong></td><td><strong>Proposed System</strong></td><td style="text-align: center;">3</td></tr>
+        <tr><td style="text-align: center;"><strong>7</strong></td><td><strong>System Analysis & Design</strong></td><td style="text-align: center;">4</td></tr>
+        <tr><td style="text-align: center;"><strong>8</strong></td><td><strong>Methodology</strong></td><td style="text-align: center;">5</td></tr>
+        <tr><td style="text-align: center;"><strong>9</strong></td><td><strong>System Implementation</strong></td><td style="text-align: center;">5</td></tr>
+        <tr><td style="text-align: center;"><strong>10</strong></td><td><strong>Testing & Quality Assurance</strong></td><td style="text-align: center;">6</td></tr>
+        <tr><td style="text-align: center;"><strong>11</strong></td><td><strong>Results / Screenshots</strong></td><td style="text-align: center;">7</td></tr>
+        <tr><td style="text-align: center;"><strong>12</strong></td><td><strong>Conclusion</strong></td><td style="text-align: center;">9</td></tr>
+        <tr><td style="text-align: center;"><strong>13</strong></td><td><strong>Future Scope</strong></td><td style="text-align: center;">9</td></tr>
+        <tr><td style="text-align: center;"><strong>14</strong></td><td><strong>References</strong></td><td style="text-align: center;">9</td></tr>
       </tbody>
     </table>
+    <br>
+    <h3>LIST OF FIGURES</h3>
+    <ul>
+      <li><strong>Figure 11.1:</strong> CampusTrack Homepage with Live Metrics & Search Hub</li>
+      <li><strong>Figure 11.2:</strong> Multi-Category Search & Filter Catalog Screen</li>
+      <li><strong>Figure 11.3:</strong> Item Application Details View with Anti-Fraud Verification Challenge</li>
+      <li><strong>Figure 11.4:</strong> Student & Administrator Login Portal with Academic Viva Presets</li>
+      <li><strong>Figure 11.5:</strong> Student Account Registration Screen with Student ID / Roll Number Validation</li>
+    </ul>
+    <div class="footer-num">Page iv</div>
   </div>
 
-  <!-- PAGE 5: CHAPTERS 1 & 2 -->
-  <div class="page-break">
+  <!-- ==================== PAGE 5: CHAPTERS 1 & 2 ==================== -->
+  <div class="page" style="padding-top: 15px;">
     <h2>CHAPTER 1: INTRODUCTION</h2>
     <h3>1.1 Background & Motivation</h3>
-    <p style="text-align:justify;">
-      Across tertiary educational institutions, colleges, and university complexes, students routinely traverse sprawling multi-acre grounds daily. During transitions between lectures, computer laboratories, central libraries, and sports centers, personal possessions are regularly left behind. Misplacing critical academic or identity assets—such as graphing calculators, laptops, hall tickets, and university identity cards—causes acute academic distress and logistical interruption.
+    <p>
+      In modern higher education institutions, sprawling physical facilities host thousands of daily interactions among students, research scholars, teaching faculty, and administrative staff. As individuals transition between instructional lecture halls, departmental computer centers, multi-story libraries, and food courts, personal possessions are regularly left behind. Misplacing items such as graphing calculators before examinations or smart identity cards necessary for campus turnstile access causes serious logistical and academic disruption.
     </p>
-    <p style="text-align:justify;">
-      Historically, academic campuses have attempted to handle this using informal, fragmented tools: paper registers located at guard cabins, physical flyers pinned to corridor bulletin boards, or unmoderated student group chats. These methods fail to provide searchability, visual confirmation, ownership proof, or administrative tracking.
+    <p>
+      Historically, universities have handled misplaced property through decentralized channels: physical paper registers at security gates, flyers taped to bulletin boards, or unofficial student WhatsApp batches. These methods lack search indexing, photographic records, ownership proof, and institutional accountability.
     </p>
-    <h3>1.2 Scope of CampusTrack</h3>
-    <p style="text-align:justify;">
-      <strong>CampusTrack</strong> is engineered as a secure university web portal providing:
+    <h3>1.2 Scope of the Project</h3>
+    <p>
+      <strong>CampusTrack</strong> provides a centralized university portal that digitizes the entire recovery lifecycle:
     </p>
     <ul>
-      <li>Centralized item registration for both lost and found belongings.</li>
-      <li>Local multipart photo upload storage linked to relational database entries.</li>
-      <li>Anti-fraud verification protocols using security challenge questions.</li>
-      <li>Role-based access control protecting student privacy and giving security staff moderation power.</li>
+      <li>Categorized application logging for both lost items and found articles.</li>
+      <li>Server-side multipart image processing linking photographs directly to database records.</li>
+      <li>Challenge-response anti-fraud ownership verification questions.</li>
+      <li>Administrative security portal enabling moderation and audit tracking across campus.</li>
     </ul>
 
     <h2>CHAPTER 2: PROBLEM DEFINITION</h2>
     <h3>2.1 Core Problem Statement</h3>
-    <p style="text-align:justify;">
-      The absence of an automated, centralized digital tracking system in collegiate environments leads to permanent property loss, wasted student hours, complete lack of visual documentation, and vulnerability to false claims.
+    <p>
+      The absence of an automated, centralized digital tracking system in collegiate institutions results in permanent property loss, wasted student hours, vulnerability to fraudulent claims, and heavy administrative overhead on security staff.
     </p>
     <h3>2.2 Key Operational Bottlenecks</h3>
     <ul>
-      <li><strong>Information Fragmentation:</strong> Notices are scattered across separate physical buildings and unofficial social media channels.</li>
+      <li><strong>Information Fragmentation:</strong> Notices are scattered across separate physical buildings and unofficial social media channels with zero cross-campus coordination.</li>
       <li><strong>False Claims & Scams:</strong> In public chat groups, opportunistic individuals falsely claim items because finders lack verification protocols.</li>
       <li><strong>Absence of Photographic Evidence:</strong> Physical notebooks cannot capture visual condition, brand stickers, or subtle identifying marks.</li>
       <li><strong>Privacy Vulnerabilities:</strong> Students frequently post their private mobile numbers on public corkboards, leading to unsolicited calls.</li>
     </ul>
+    <div class="footer-num">Page 1</div>
   </div>
 
-  <!-- PAGE 6: CHAPTERS 3 & 4 -->
-  <div class="page-break">
+  <!-- ==================== PAGE 6: CHAPTERS 3 & 4 ==================== -->
+  <div class="page" style="padding-top: 15px;">
     <h2>CHAPTER 3: OBJECTIVES</h2>
-    <p style="text-align:justify;">The key technical and functional objectives of this project are:</p>
+    <p>The principal engineering objectives of CampusTrack are:</p>
     <ol>
-      <li><strong>Centralized Hub:</strong> Build a unified web application serving all departments, hostels, and campus administrative centers.</li>
-      <li><strong>Image Archival:</strong> Implement an integrated file storage subsystem using Multer to archive photos of lost and found items on disk.</li>
+      <li><strong>Centralized Discovery:</strong> Build a unified web application serving all departments, hostels, and campus administrative centers.</li>
+      <li><strong>Integrated Image Storage:</strong> Implement a robust media upload subsystem using Multer to archive photos of lost and found items on disk.</li>
       <li><strong>Anti-Fraud Verification:</strong> Implement an ownership verification mechanism requiring claimants to provide specific hidden details or answer challenge questions.</li>
       <li><strong>Student Privacy Protection:</strong> Provide in-app claim notifications so students do not need to publish phone numbers publicly.</li>
       <li><strong>Administrative Governance:</strong> Provide campus security personnel with a real-time console to track statistics, monitor disputes, and delete spam.</li>
@@ -310,14 +313,15 @@
         <tr><td><strong>Hardware</strong></td><td>x64 Processor, 4 GB RAM, 500 MB Disk</td><td>Standard laptop or campus server</td></tr>
       </tbody>
     </table>
+    <div class="footer-num">Page 2</div>
   </div>
 
-  <!-- PAGE 7: CHAPTERS 5 & 6 -->
-  <div class="page-break">
+  <!-- ==================== PAGE 7: CHAPTERS 5 & 6 ==================== -->
+  <div class="page" style="padding-top: 15px;">
     <h2>CHAPTER 5: EXISTING SYSTEM</h2>
     <h3>5.1 Limitations of Existing Approaches</h3>
-    <p style="text-align:justify;">
-      At present, colleges rely on paper logbooks, corkboards, and student chat groups. These systems lack search indexing, cannot store photos, provide zero ownership validation, and expose personal student phone numbers to the public.
+    <p>
+      Colleges and universities have historically tackled lost property through ad-hoc mechanisms: manual security logbooks, corkboards, and student chat groups. These systems lack search indexing, cannot store photos, provide zero ownership validation, and expose personal student phone numbers to the public.
     </p>
 
     <h3>5.2 Comparative Feature Matrix</h3>
@@ -341,22 +345,28 @@
 
     <h2>CHAPTER 6: PROPOSED SYSTEM</h2>
     <h3>6.1 System Overview & Benefits</h3>
-    <p style="text-align:justify;">
+    <p>
       CampusTrack establishes a clear, accountable lifecycle for misplaced belongings. When a student finds an item, they log its campus coordinates, attach a photo, and set an <strong>Ownership Verification Question</strong> (e.g., <em>"What color is the keychain charm?"</em>). Claimants must answer this question and can upload proof (e.g., purchase invoice, student ID) to claim the item. The item poster reviews the claim and approves it, automatically marking the case as <code>RESOLVED</code>.
     </p>
+    <ul>
+      <li><strong>Fraud Mitigation:</strong> Prevents opportunists from taking belongings they did not lose.</li>
+      <li><strong>Photo Preservation:</strong> Actual images stored locally on disk and served statically.</li>
+      <li><strong>Privacy Shield:</strong> Contact information is only shared after verification approval.</li>
+    </ul>
+    <div class="footer-num">Page 3</div>
   </div>
 
-  <!-- PAGE 8: CHAPTER 7 (ANALYSIS & DESIGN) -->
-  <div class="page-break">
+  <!-- ==================== PAGE 8: CHAPTER 7 ==================== -->
+  <div class="page" style="padding-top: 15px;">
     <h2>CHAPTER 7: SYSTEM ANALYSIS & DESIGN</h2>
     <h3>7.1 Three-Tier Architecture</h3>
-    <p style="text-align:justify;">
-      The platform utilizes a modern three-tier decoupled client-server architecture:
+    <p>
+      The platform follows a decoupled three-tier architectural model:
     </p>
     <ul>
       <li><strong>Presentation Tier:</strong> React 19 UI with Tailwind CSS providing high accessibility across devices.</li>
       <li><strong>Application Tier:</strong> Node.js Express server handling business logic, Multer file streaming, and JWT tokens.</li>
-      <li><strong>Data Tier:</strong> Prisma ORM managing SQLite database relations (dev.db) and static image assets (/uploads).</li>
+      <li><strong>Data Tier:</strong> Prisma ORM managing SQLite database relations (<code>dev.db</code>) and static image assets (<code>/uploads</code>).</li>
     </ul>
 
     <h3>7.2 Entity-Relationship (ER) Schema & Data Dictionary</h3>
@@ -371,13 +381,14 @@
         <tr><td><strong>Notification</strong></td><td>id, userId, title, message, link, isRead</td><td>PK: id, FK: userId</td><td>Stores alerts dispatched to students</td></tr>
       </tbody>
     </table>
+    <div class="footer-num">Page 4</div>
   </div>
 
-  <!-- PAGE 9: CHAPTERS 8 & 9 (METHODOLOGY & IMPLEMENTATION) -->
-  <div class="page-break">
+  <!-- ==================== PAGE 9: CHAPTERS 8 & 9 ==================== -->
+  <div class="page" style="padding-top: 15px;">
     <h2>CHAPTER 8: METHODOLOGY</h2>
     <h3>8.1 Agile Scrum Methodology</h3>
-    <p style="text-align:justify;">
+    <p>
       The development followed the Agile framework over 5 structured sprints:
     </p>
     <ul>
@@ -404,13 +415,14 @@
         <tr><td><code>GET</code></td><td>/api/admin/overview</td><td>Admin</td><td>Retrieves full campus metrics, users, and audit feed</td></tr>
       </tbody>
     </table>
+    <div class="footer-num">Page 5</div>
   </div>
 
-  <!-- PAGE 10: CHAPTER 10 (TESTING) -->
-  <div class="page-break">
+  <!-- ==================== PAGE 10: CHAPTER 10 ==================== -->
+  <div class="page" style="padding-top: 15px;">
     <h2>CHAPTER 10: TESTING & QUALITY ASSURANCE</h2>
     <h3>10.1 Testing Methodology</h3>
-    <p style="text-align:justify;">
+    <p>
       The platform was validated through Unit Testing, Integration Testing, and User Acceptance Testing (UAT).
     </p>
     
@@ -437,50 +449,53 @@
         <tr><td><strong>TC-09</strong></td><td>Admin Authorization</td><td>Non-admin blocked from /admin</td><td>HTTP 403 Forbidden enforced</td><td><strong>PASS</strong></td></tr>
       </tbody>
     </table>
+    <div class="footer-num">Page 6</div>
   </div>
 
-  <!-- PAGE 11: CHAPTER 11 (RESULTS & SCREENSHOTS - PART 1) -->
-  <div class="page-break">
-    <h2>CHAPTER 11: RESULTS / SCREENSHOTS</h2>
-    <p style="text-align:justify;">
+  <!-- ==================== PAGE 11: RESULTS & SCREENSHOTS (PART 1) ==================== -->
+  <div class="page" style="padding-top: 15px;">
+    <h2>CHAPTER 11: RESULTS / SCREENSHOTS (PART 1)</h2>
+    <p>
       The application was executed and captured during live operation. Below are actual screenshots of the system:
     </p>
 
-    <div class="img-container">
-      <img src="./screenshots/01_homepage.png" alt="Homepage Screen">
+    <div class="img-box" style="margin-top: 10px;">
+      <img src="./screenshots/01_homepage.png" alt="Homepage Screen" style="max-height: 250px;">
       <div class="caption">Figure 11.1: CampusTrack Homepage with Live Campus Metrics & Quick Search Hub.</div>
     </div>
 
-    <div class="img-container">
-      <img src="./screenshots/02_browse_items.png" alt="Browse Listings Screen">
+    <div class="img-box" style="margin-top: 15px;">
+      <img src="./screenshots/02_browse_items.png" alt="Browse Listings Screen" style="max-height: 250px;">
       <div class="caption">Figure 11.2: Filterable Campus Listings Screen with Multi-Category Tags.</div>
     </div>
+    <div class="footer-num">Page 7</div>
   </div>
 
-  <!-- PAGE 12: CHAPTER 11 (RESULTS & SCREENSHOTS - PART 2) -->
-  <div class="page-break">
-    <h2>CHAPTER 11: RESULTS / SCREENSHOTS (CONTD.)</h2>
+  <!-- ==================== PAGE 12: RESULTS & SCREENSHOTS (PART 2) ==================== -->
+  <div class="page" style="padding-top: 15px;">
+    <h2>CHAPTER 11: RESULTS / SCREENSHOTS (PART 2)</h2>
 
-    <div class="img-container">
-      <img src="./screenshots/03_item_details.png" alt="Item Details Screen">
+    <div class="img-box">
+      <img src="./screenshots/03_item_details.png" alt="Item Details Screen" style="max-height: 195px;">
       <div class="caption">Figure 11.3: Detailed Item Application View with Anti-Fraud Verification Challenge.</div>
     </div>
 
-    <div class="img-container">
-      <img src="./screenshots/04_login_screen.png" alt="Login Portal Screen">
+    <div class="img-box" style="margin-top: 10px;">
+      <img src="./screenshots/04_login_screen.png" alt="Login Portal Screen" style="max-height: 195px;">
       <div class="caption">Figure 11.4: Student & Administrator Login Portal with 1-Click Academic Presets.</div>
     </div>
 
-    <div class="img-container">
-      <img src="./screenshots/05_register_screen.png" alt="Registration Screen">
+    <div class="img-box" style="margin-top: 10px;">
+      <img src="./screenshots/05_register_screen.png" alt="Registration Screen" style="max-height: 195px;">
       <div class="caption">Figure 11.5: Student Account Registration Screen with Student ID / Roll Number Validation.</div>
     </div>
+    <div class="footer-num">Page 8</div>
   </div>
 
-  <!-- PAGE 13: CHAPTERS 12, 13 & 14 (CONCLUSION, FUTURE SCOPE, REFERENCES) -->
-  <div>
+  <!-- ==================== PAGE 13: CONCLUSION, FUTURE SCOPE, REFERENCES ==================== -->
+  <div class="page" style="padding-top: 15px;">
     <h2>CHAPTER 12: CONCLUSION</h2>
-    <p style="text-align:justify;">
+    <p>
       <strong>CampusTrack</strong> successfully demonstrates how modern web engineering can solve a persistent real-world collegiate challenge. By uniting <strong>React 19</strong>, <strong>Express.js</strong>, and <strong>SQLite with Prisma ORM</strong>, the project establishes a centralized platform that eliminates information fragmentation, prevents false claims via verification questions, archives photo evidence, and provides campus authorities with full oversight.
     </p>
 
@@ -493,7 +508,7 @@
     </ul>
 
     <h2>CHAPTER 14: REFERENCES</h2>
-    <ol style="font-size:10pt;">
+    <ol style="font-size: 9.5pt; line-height: 1.4;">
       <li>Fielding, R. T. (2000). <em>"Architectural Styles and the Design of Network-based Software Architectures"</em>. Doctoral dissertation, UC Irvine.</li>
       <li>Tilkov, S., & Vinoski, S. (2010). <em>"Node.js: Using JavaScript to Build High-Performance Network Programs"</em>. IEEE Internet Computing, 14(6), 80-83.</li>
       <li>Sommerville, I. (2016). <em>"Software Engineering"</em>, 10th Edition. Pearson Education.</li>
@@ -501,6 +516,7 @@
       <li>Prisma Documentation: <em>"Prisma ORM & Relational Schema Modeling"</em>, <a href="https://www.prisma.io/docs">https://www.prisma.io/docs</a></li>
       <li>Express.js Framework Documentation: <a href="https://expressjs.com">https://expressjs.com</a></li>
     </ol>
+    <div class="footer-num">Page 9</div>
   </div>
 
 </body>
