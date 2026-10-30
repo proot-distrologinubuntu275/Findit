@@ -17,18 +17,20 @@
 
 **SUBMITTED BY:**  
 **Suryakant Jaiswar**  
-Roll No / Student ID: CS2024-001  
+Seat No : 510512446
+Class: T.Y.B.Sc. Computer Science  
 
 <br/>
 
 **UNDER THE GUIDANCE OF:**  
-**Prof. [Project Guide Name]**  
+**Ms. Ragvinder Kaur Chadha (Assistant Professor)**  
 Department of Computer Science & Engineering  
 
 <br/><br/>
 
 ### **DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING**  
-**[COLLEGE / UNIVERSITY NAME]**  
+**Achievers College of Commerce and Management, Kalyan (W)
+(Affiliated to University of Mumbai)**  
 **ACADEMIC YEAR: 2026 â€“ 2027**
 
 </div>
@@ -73,7 +75,7 @@ We hereby declare that the project entitled **"CampusTrack: A Secured Centralize
 
 The successful design, development, and testing of **CampusTrack** has been an enriching educational journey made possible through the collaboration, guidance, and encouragement of many individuals.
 
-We express our deepest gratitude to our project guide, **Prof. [Project Guide Name]**, Department of Computer Science & Engineering, whose insightful technical advice, continuous encouragement, and constructive critique guided us through every phase of system design and implementation.
+We express our deepest gratitude to our project guide, **Ms. Ragvinder Kaur Chadha (Assistant Professor)**, Department of Computer Science & Engineering, whose insightful technical advice, continuous encouragement, and constructive critique guided us through every phase of system design and implementation.
 
 We also convey our sincere thanks to the **Head of the Department (HOD)**, **Prof. [HOD Name]**, and the esteemed faculty members for granting us access to laboratory computing resources and supporting our academic endeavors.
 
@@ -613,5 +615,6 @@ Future milestones planned for CampusTrack include:
 8. **Tailwind Labs:** *"Tailwind CSS Documentation"* â€“ [https://tailwindcss.com](https://tailwindcss.com)
 
 </div>
+
 
 
