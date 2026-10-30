@@ -211,10 +211,37 @@
       font-weight: bold;
       font-family: Arial, sans-serif;
     }
-    .badge-pass { background-color: #dcfce7; color: #166534; }
+        .badge-pass { background-color: #dcfce7; color: #166534; }
+
+    /* Academic Page Borders */
+    .page-frame {
+      position: fixed;
+      top: 6mm;
+      left: 8mm;
+      right: 6mm;
+      bottom: 6mm;
+      border: 1.8px solid #0f172a;
+      pointer-events: none;
+      box-sizing: border-box;
+      z-index: 99999;
+    }
+    .page-frame-inner {
+      position: fixed;
+      top: 7.5mm;
+      left: 9.5mm;
+      right: 7.5mm;
+      bottom: 7.5mm;
+      border: 0.8px solid #475569;
+      pointer-events: none;
+      box-sizing: border-box;
+      z-index: 99999;
+    }
   </style>
 </head>
 <body>
+  <!-- Academic Double-Line Page Borders -->
+  <div class="page-frame"></div>
+  <div class="page-frame-inner"></div>
 
   <!-- ==================== 1. TITLE PAGE ==================== -->
   <div class="title-page">
@@ -248,37 +275,7 @@
     </div>
   </div>
 
-  <!-- ==================== 2. CERTIFICATE ==================== -->
-  <div class="page-break"></div>
-  <div style="padding-top: 15pt;">
-    <h1 style="text-align: center; font-size: 16pt; margin-bottom: 20pt; text-transform: uppercase;">CERTIFICATE OF APPROVAL</h1>
-    
-    <p style="margin-top: 25pt; line-height: 1.8;">
-      This is to certify that the project entitled <strong>"CampusTrack: A Secured Centralized Lost and Found Platform for College Campuses"</strong> is a bonafide work carried out and submitted by <strong>Suryakant Jaiswar</strong> (Seat No: <strong>510512446</strong>) in partial fulfillment of the requirements for the award of the degree of <strong>Third Year Bachelor of Science in Computer Science (T.Y.B.Sc. C.S.)</strong> from the <strong>University of Mumbai</strong>.
-    </p>
-
-    <p style="line-height: 1.8; margin-top: 15pt;">
-      This project was conducted under my direct guidance and continuous supervision at <strong>Achievers College of Commerce and Management, Kalyan (W)</strong> during the academic year 2026–2027. To the best of our knowledge, the software engineering design, technical artifacts, empirical verification, and documentation presented in this dissertation represent original work and have not been submitted elsewhere for the conferment of any academic degree, diploma, or certificate.
-    </p>
-
-    <div class="signature-area" style="margin-top: 100pt;">
-      <div class="sig-col">
-        <p>_____________________________________</p>
-        <p><strong>Ms. Ragvinder Kaur Chadha</strong><br>Project Guide (Assistant Professor)<br>Department of Computer Science</p>
-      </div>
-      <div class="sig-col">
-        <p>_____________________________________</p>
-        <p><strong>Head of the Department</strong><br>Department of Computer Science<br>Achievers College, Kalyan (W)</p>
-      </div>
-    </div>
-
-    <div style="margin-top: 80pt; text-align: center;">
-      <p>_____________________________________</p>
-      <p><strong>External Examiner</strong><br>Date of Evaluation: ____________________</p>
-    </div>
-  </div>
-
-  <!-- ==================== 3. DECLARATION ==================== -->
+  <!-- ==================== 2. DECLARATION ==================== -->
   <div class="page-break"></div>
   <div style="padding-top: 15pt;">
     <h1 style="text-align: center; font-size: 16pt; margin-bottom: 20pt; text-transform: uppercase;">DECLARATION</h1>
@@ -362,24 +359,23 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td style="text-align: center;">-</td><td>Certificate of Approval</td><td style="text-align: center;">ii</td></tr>
-        <tr><td style="text-align: center;">-</td><td>Official Declaration</td><td style="text-align: center;">iii</td></tr>
-        <tr><td style="text-align: center;">-</td><td>Abstract</td><td style="text-align: center;">iv</td></tr>
-        <tr><td style="text-align: center;"><strong>1</strong></td><td><strong>Introduction</strong><br>&nbsp;&nbsp;1.1 Background & Motivation<br>&nbsp;&nbsp;1.2 What is the Project About?<br>&nbsp;&nbsp;1.3 Why Was This Topic Selected?<br>&nbsp;&nbsp;1.4 Importance of CampusTrack<br>&nbsp;&nbsp;1.5 Brief Overview of Proposed Solution<br>&nbsp;&nbsp;1.6 Project at a Glance</td><td style="text-align: center;">1</td></tr>
-        <tr><td style="text-align: center;"><strong>2</strong></td><td><strong>Problem Definition</strong><br>&nbsp;&nbsp;2.1 Problem Definition & Context<br>&nbsp;&nbsp;2.2 Who Faces the Problem?<br>&nbsp;&nbsp;2.3 Limitations of Current Manual Approaches<br>&nbsp;&nbsp;2.4 Why Is the Project Needed?<br>&nbsp;&nbsp;2.5 How the Project Helps</td><td style="text-align: center;">6</td></tr>
-        <tr><td style="text-align: center;"><strong>3</strong></td><td><strong>Objectives</strong><br>&nbsp;&nbsp;3.1 Project Objectives<br>&nbsp;&nbsp;3.2 Scope of the Project (In Scope)<br>&nbsp;&nbsp;3.3 Outside the Current Release<br>&nbsp;&nbsp;3.4 Completion Criteria<br>&nbsp;&nbsp;3.5 Target Operating Mode</td><td style="text-align: center;">9</td></tr>
-        <tr><td style="text-align: center;"><strong>4</strong></td><td><strong>Requirement Specification</strong><br>&nbsp;&nbsp;4.1 Hardware Requirements<br>&nbsp;&nbsp;4.2 Software Requirements<br>&nbsp;&nbsp;4.3 Functional Requirements (FR-01 to FR-12)<br>&nbsp;&nbsp;4.4 Non-Functional Requirements<br>&nbsp;&nbsp;4.5 Stakeholders and Primary Use Cases</td><td style="text-align: center;">12</td></tr>
-        <tr><td style="text-align: center;"><strong>5</strong></td><td><strong>Existing System</strong><br>&nbsp;&nbsp;5.1 Existing System Overview<br>&nbsp;&nbsp;5.2 Problems in the Existing System<br>&nbsp;&nbsp;5.3 Limitations of Manual Logbooks & Social Groups<br>&nbsp;&nbsp;5.4 Comparative Evaluation Matrix</td><td style="text-align: center;">17</td></tr>
-        <tr><td style="text-align: center;"><strong>6</strong></td><td><strong>Proposed System</strong><br>&nbsp;&nbsp;6.1 Proposed System Overview<br>&nbsp;&nbsp;6.2 Key Architectural Decisions<br>&nbsp;&nbsp;6.3 Anti-Fraud Challenge Workflow<br>&nbsp;&nbsp;6.4 Core Features & Capabilities<br>&nbsp;&nbsp;6.5 Advantages of Proposed System<br>&nbsp;&nbsp;6.6 Feasibility Study (Technical, Operational, Economic)</td><td style="text-align: center;">20</td></tr>
-        <tr><td style="text-align: center;"><strong>7</strong></td><td><strong>System Analysis & Design</strong><br>&nbsp;&nbsp;7.1 Tiered System Architecture<br>&nbsp;&nbsp;7.2 Context Level DFD (Level-0)<br>&nbsp;&nbsp;7.3 Level-1 Data Flow Diagram (DFD)<br>&nbsp;&nbsp;7.4 Level-2 Data Flow Diagram (DFD)<br>&nbsp;&nbsp;7.5 Use Case Modeling & Actors<br>&nbsp;&nbsp;7.6 Activity Diagram (Recovery Lifecycle)<br>&nbsp;&nbsp;7.7 Sequence Diagram (Anti-Fraud Claim Verification)<br>&nbsp;&nbsp;7.8 Entity Relationship Diagram (ERD) & Schemas<br>&nbsp;&nbsp;7.9 RESTful API Design Specification</td><td style="text-align: center;">27</td></tr>
-        <tr><td style="text-align: center;"><strong>8</strong></td><td><strong>Methodology</strong><br>&nbsp;&nbsp;8.1 SDLC Model (Agile & Iterative Lifecycle)<br>&nbsp;&nbsp;8.2 Phases of Development (Sprint 1 to 4)<br>&nbsp;&nbsp;8.3 Anti-Fraud Verification Logic<br>&nbsp;&nbsp;8.4 Controller and Middleware Abstraction<br>&nbsp;&nbsp;8.5 Quality Assurance & Branch Governance</td><td style="text-align: center;">40</td></tr>
-        <tr><td style="text-align: center;"><strong>9</strong></td><td><strong>System Implementation</strong><br>&nbsp;&nbsp;9.1 Development Environment & Repository Hierarchy<br>&nbsp;&nbsp;9.2 Frontend Implementation (React 19 & Tailwind)<br>&nbsp;&nbsp;9.3 Backend Implementation (Express 5 REST API)<br>&nbsp;&nbsp;9.4 Multipart Media Ingestion Pipeline (Multer)<br>&nbsp;&nbsp;9.5 Relational Persistence (Prisma ORM & SQLite)<br>&nbsp;&nbsp;9.6 Security Architecture (JWT & Bcrypt)<br>&nbsp;&nbsp;9.7 Technical Challenges & Resolutions</td><td style="text-align: center;">45</td></tr>
-        <tr><td style="text-align: center;"><strong>10</strong></td><td><strong>Testing & Verification</strong><br>&nbsp;&nbsp;10.1 Verification Strategy<br>&nbsp;&nbsp;10.2 Automated Unit & Integration Testing<br>&nbsp;&nbsp;10.3 Functional Smoke Testing<br>&nbsp;&nbsp;10.4 Complete Test Execution Matrix (TC-01 to TC-15)</td><td style="text-align: center;">53</td></tr>
-        <tr><td style="text-align: center;"><strong>11</strong></td><td><strong>Results / Screenshots</strong><br>&nbsp;&nbsp;11.1 Deployment & Execution Walkthrough<br>&nbsp;&nbsp;11.2 Actual Screen Captures & Figure Analysis</td><td style="text-align: center;">56</td></tr>
-        <tr><td style="text-align: center;"><strong>12</strong></td><td><strong>Conclusion</strong><br>&nbsp;&nbsp;12.1 Project Summary<br>&nbsp;&nbsp;12.2 Achievement of Engineering Objectives<br>&nbsp;&nbsp;12.3 Key Learnings & Engineering Outcomes</td><td style="text-align: center;">62</td></tr>
-        <tr><td style="text-align: center;"><strong>13</strong></td><td><strong>Future Scope</strong><br>&nbsp;&nbsp;13.1 Planned Future Enhancements<br>&nbsp;&nbsp;13.2 Institutional Multi-Campus Expansion</td><td style="text-align: center;">64</td></tr>
-        <tr><td style="text-align: center;"><strong>14</strong></td><td><strong>References</strong></td><td style="text-align: center;">66</td></tr>
-        <tr><td style="text-align: center;"><strong>App.</strong></td><td><strong>Appendices</strong> (A: Environment, B: API Specs, C: Glossary)</td><td style="text-align: center;">67</td></tr>
+        <tr><td style="text-align: center;">-</td><td><strong>Official Declaration</strong></td><td style="text-align: center;">ii</td></tr>
+        <tr><td style="text-align: center;">-</td><td><strong>Abstract</strong></td><td style="text-align: center;">iii</td></tr>
+        <tr><td style="text-align: center;"><strong>1</strong></td><td><strong>Introduction</strong></td><td style="text-align: center;">1</td></tr>
+        <tr><td style="text-align: center;"><strong>2</strong></td><td><strong>Problem Definition</strong></td><td style="text-align: center;">6</td></tr>
+        <tr><td style="text-align: center;"><strong>3</strong></td><td><strong>Objectives</strong></td><td style="text-align: center;">9</td></tr>
+        <tr><td style="text-align: center;"><strong>4</strong></td><td><strong>Requirement Specification</strong></td><td style="text-align: center;">12</td></tr>
+        <tr><td style="text-align: center;"><strong>5</strong></td><td><strong>Existing System</strong></td><td style="text-align: center;">17</td></tr>
+        <tr><td style="text-align: center;"><strong>6</strong></td><td><strong>Proposed System</strong></td><td style="text-align: center;">20</td></tr>
+        <tr><td style="text-align: center;"><strong>7</strong></td><td><strong>System Analysis & Design</strong></td><td style="text-align: center;">27</td></tr>
+        <tr><td style="text-align: center;"><strong>8</strong></td><td><strong>Methodology</strong></td><td style="text-align: center;">39</td></tr>
+        <tr><td style="text-align: center;"><strong>9</strong></td><td><strong>System Implementation</strong></td><td style="text-align: center;">44</td></tr>
+        <tr><td style="text-align: center;"><strong>10</strong></td><td><strong>Testing & Verification</strong></td><td style="text-align: center;">52</td></tr>
+        <tr><td style="text-align: center;"><strong>11</strong></td><td><strong>Results / Screenshots</strong></td><td style="text-align: center;">54</td></tr>
+        <tr><td style="text-align: center;"><strong>12</strong></td><td><strong>Conclusion</strong></td><td style="text-align: center;">59</td></tr>
+        <tr><td style="text-align: center;"><strong>13</strong></td><td><strong>Future Scope</strong></td><td style="text-align: center;">61</td></tr>
+        <tr><td style="text-align: center;"><strong>14</strong></td><td><strong>References</strong></td><td style="text-align: center;">63</td></tr>
+        <tr><td style="text-align: center;"><strong>App.</strong></td><td><strong>Technical Appendices</strong></td><td style="text-align: center;">64</td></tr>
       </tbody>
     </table>
   </div>
